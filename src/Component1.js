@@ -2,7 +2,7 @@ import React from 'react'
 
 class Component1 extends React.Component{
 
-    constructor(props){
+    constructor(){
         super()
         this.state = {
             name : "User"
