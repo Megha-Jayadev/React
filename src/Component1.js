@@ -9,7 +9,7 @@ class Component1 extends React.Component{
         }
     }
 
-    changeName(){
+    changeName = () => {
         this.setState ({
             name : "Megha"
         })
@@ -20,7 +20,7 @@ class Component1 extends React.Component{
             <div>
                 <h1>Hello {this.state.name} </h1>
                 <h3>Welcome to {this.props.library} !!</h3>
-                <button onClick = { ()=>this.changeName() } >Click Here</button>
+                <button onClick = { this.changeName } >Click Here</button>
             </div>
         );
     }
