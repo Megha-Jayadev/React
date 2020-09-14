@@ -2,21 +2,28 @@ import React from 'react'
 
 class Component2 extends React.Component{
 
-    state = {
-        name : 'User'
+    constructor(props){
+        super(props);
+        this.state = {
+            fullname : 'User'
+        }; 
+       
     }
 
-    nameHandler = (event) => {
-        this.setState ( {
-            name : event.target.value
-        }
-    )}
+
+   submitHandler = e => {
+       e.preventDefault()
+       const name = this.fullname.value
+       this.setState({ fullname: name })
+   }
+
 
     render(){
         return(
             <div>
-                <h1>Hello {this.state.name} </h1>
-                <input type="text" placeholder="Enter name" required onChange = {this.nameHandler} />
+                <h3>Your name is: {this.state.fullname}</h3>
+                <input type="text" placeholder="Enter name" name="fullname" ref = {input => this.fullname = input} required/>
+                <button type="submit" onClick = {this.submitHandler} >Submit</button>
             </div>
         );
     }
