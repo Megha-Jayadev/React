@@ -1,16 +1,12 @@
 import React from 'react';
 import './App.css';
-import Postdata from './Postdata'
-import Postusers from './Postusers'
-import UserInput from './UserInput'
+import Login from './Login'
 
 
 function App() {
   return (
     <div>
-      <UserInput></UserInput>
-      <Postdata></Postdata>
-      <Postusers></Postusers>
+      <Login></Login>
     </div>
   );
 }
