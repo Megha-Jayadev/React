@@ -74,7 +74,7 @@ class Login extends React.Component {
                         { this.state.emailError ? (<span style={{fontSize:12 ,color:'red'}}>{this.state.emailError}</span>): null }
                     </div>
                     <div>
-                        <input type="text" value={this.state.password} id="pwd" 
+                        <input type="password" value={this.state.password} id="pwd" 
                         onChange={this.pwdChangeHandler} placeholder="Password" required/>
                         { this.state.pwdError ? (<span style={{fontSize:12 ,color:'red'}}>{this.state.pwdError}</span>): null }
                     </div>
