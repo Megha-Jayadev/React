@@ -35,14 +35,16 @@ class Login extends React.Component {
     validate = () => {
         let emailError = ''
         let pwdError= ''
-
+        const pwd = /^([a-zA-Z0-9]+)$/ 
+        const pwd1 =  /\d/
+        const pwd2 =  /[A-Z]/
     
-        if(!this.state.email.match('^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9\.-]+).([a-z]{2,20})(.[a-z]{2,8})$')){
+        if(!this.state.email.match('^([a-zA-Z0-9.-]+)@([a-zA-Z0-9.-]+).([a-z]{2,20})(.[a-z]{2,8})$')){
             emailError = 'Invalid email'
         }
-
-        if(!this.state.password.match('.*[a-z].*[A-z].*[0-9]+.*')){
-            pwdError = 'Invalid password'
+        
+        if(!pwd.test(this.state.password)&& (!pwd1.test(this.state.password))&&(!pwd2.test(this.state.password)) ){
+            pwdError = 'Password should contain atleast one digit, uppercase and lowercase letter'
         }
 
         if(emailError || pwdError){
