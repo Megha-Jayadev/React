@@ -1,4 +1,3 @@
-import { number } from 'prop-types'
 import React from 'react'
 
 
@@ -36,7 +35,7 @@ class Login extends React.Component {
     validate = () => {
         let emailError = ''
         let pwdError= ''  
-        let pwd = /^.*(?=.{3,10})(?=.*\d)(?=.*[a-zA-Z]).*$/
+        let pwd = /^.*(?=.{3,10})(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$/
 
         if(!this.state.email.match('^([a-zA-Z0-9.-]+)@([a-zA-Z0-9.-]+).([a-z]{2,20})(.[a-z]{2,8})$')){
             emailError = 'Invalid email'
